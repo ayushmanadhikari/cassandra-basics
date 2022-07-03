@@ -1,0 +1,98 @@
+batch pipelines
+realtime pipelines
+hadoop ecosystem
+spark
+big data ecosystem
+distributed computing storage
+different file systems
+dbms/sql
+nosql
+
+
+
+
+containers vs virtual machine
+
+
+VM: an abstraction of a machine (physical hardware)
+	-managed by hyper visor
+	-each VM needs a full-blown OS
+	-slow to start
+	-resource intensive
+
+container: an isolated environment for running an application
+	-same kind of isolation
+	-lightweight
+	-use OS of the host
+	-start quickly
+	-needs less hardware resources
+
+
+Docker Architecture
+-client-server archi
+-server-> docker engine
+-all containers use the kernel of the host
+
+
+Application -> Dockerize by adding a Docker file --> This packages the application into an Image
+  
+
+Image contains everything you applciation needs to run
+
+We create a docker file and give it to docker to package our application into an image
+Once we have an image we tell docker to start a container using that image
+Container is just a process which has its own file system provided by the image
+Application gets loaded inside a container or a process
+
+
+Once we have an image we can push it to Dcoker Hub
+like github to git
+Then we can use that image on any machine running docker
+We tell the docker to start a container using that image
+
+
+
+
+Example1:
+To run an application outside docker:
+	.start with an OS
+	.install node(since we will be running app.js application)
+	.copy app files
+	.run node app.js
+
+To run an application inside docker:
+	.we can write this instruction inside docker file
+	.create a 'Dockerfile' file without any extension
+
+
+Images describe the applications and how they can be run. 
+Containers are the image instances, where multiple containers of the same image can be run, each in a different state.
+
+
+Docker Commands
+docker images
+	-lists available docker images on the machine
+
+docker build -t 'image-name-to-build' 'directory-of-docker-file-which-image-will-be-built'
+	-build docker image
+	-ex: docker build -t python-app .
+
+docker run 'image-name'
+	-runs the specified docker image
+
+docker run -it 'image-name'
+	-'it' is for interactive mode
+
+docker ps
+	-lists the running docker processes/containers
+
+docker ps -a
+	-also lists stopped containers
+
+docker 
+
+
+
+
+
+

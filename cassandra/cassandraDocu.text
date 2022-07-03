@@ -1,0 +1,108 @@
+CAP Theorem
+consistency: ensuring that the data in distributed database is same throughout the whole distributed system
+
+availability: ensuring that the data is available
+at all times 
+
+parition tolerance: ensuring that the data is tolenrent to some part of the system being failed
+
+CAP theorem says that we can achieve only 2 out of three parts from CAP. We can either have CA, PA or CP.
+
+For distributed systems/databases, we need Partition Tolerance so we can only have either Availability or Consistency. Cassandra gives priority to Availability above consistency. 
+
+MongoDB, Redis give priority to Consistency over Availability.
+
+MySQL, PostGre have consistency and availability but no partition tolerance as they exist on only one system. 
+
+
+
+Apache Cassandra Architecture
+	-peer to peer architecture: all nodes have same roles
+	-read/write anywhere
+
+
+Features
+	-Massively scalable
+	-Masterless architecture
+	-Linear scale performance: more machine added -> performance increases linearly
+	-No single point of failure
+	-Fault detection and recovery: failed nodes easily detected and recovered
+	-Data protecttion: protected with commit log design
+	-Cassandra Query Language
+
+
+
+
+Query First Approach
+Instead of the traditional relational table approach we take Query-first approach. this means we design table for specific queries. 
+This means we have specific tables for specific queries. This has consquences that the same data needs to be written to multiple tables. But is very suitable for distributed databases like Cassandra because only one table needs to be queried to get the required result. So the table has to be designed for the query. If not it will be very slow and un-performent. 
+Even in RDBMS with high loads we design query specific table anyways during De-Normalization. 
+
+
+
+Partitioning, Rings and Tokens
+how cassandra decidies what data is what node or machine in a cluster. Involves accessing as few nodes as possible. Paritioniing data with partition keys. Data with same parition key are stored in same node in a cluster. Partition key isn't necessarily primary key. 
+When parition key is passed through hash function, it generates the hashed values called Tokens. It is these Tokens that Cassandra uses to deicide on which node the data is stored. 
+
+Now how does Cassandra then use that token to decide which node the data will be stored on?
+Cassandra has Ring like structure with nodes representing some number of points in a ring/circle.
+Each node is assigned a Token. The node then stores the data less then the value of that token but greater than previous node. 
+
+
+
+
+Replication, Data Centers and Racks
+Cassandra can be used across multiple data centers. Replication supported across multiple data centers. 
+Rack in a data center is a cluster of connected machines. Rack aware approach: data replicated in other racks of same data center.
+
+How does cassandra know how to replicate data across cluster?
+Keyspace=database in RDBMS
+Replication factor = how many copies needed across different racks/machines
+First the token is calculated according to the partition key of the data to be stored. Then that data is stored in the node with the corresponding token number. Then, say if the Replicatoin factor is 3, the next 2 nodes - along with the one original node, will also contain the data in a sequential order from the starting/original node.
+
+
+
+CQL - Keyspaces and Tables
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

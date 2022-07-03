@@ -1,0 +1,44 @@
+Interview prep
+
+1. Data warehouse vs data lake
+	 A data lake is a vast pool of raw data, the purpose for which is not yet defined. 
+	 A data warehouse is a repository for structured, filtered data that has already been processed for a specific purpose.
+
+2. Data Pipeline
+	A data pipeline is a set of tools and processes used to automate the movement and transformation of data between a source system and a target repository.
+
+3. Spark used for?
+	Spark is a general-purpose distributed data processing engine that is suitable for use in a wide range of circumstances.
+
+4. Spark Streaming
+	Spark Streaming is an extension of the core Spark API that allows data engineers and data scientists to process real-time data.
+
+
+
+
+
+
+
+
+Non-Technical
+1. What responsibilities will I be handling?
+what tools and technologies will i be using for that role?
+
+2. Begineer at data engineering/analytics and would like to work in your company to provide value to your company as well as advance my skill sets.
+3. Will I get a mentor/instructor to help at times when I am stuck for great length or to guide me?
+4. My main priority is to gain knowledge and learn the tools and technologies. 
+5. I previously tried various fields such as SEO, web development but I felt that it was not what I would enjoy working in the long run. So, I decided to explore the field of data. 
+6. As I do not have much experience in this field, my main priority is to gain experience and advance my skill set in the data engineering field. So, money is not a primary concern for me at the moment. 
+
+
+
+
+1. T-SQL
+2. Windowing Function SQL
+3. 
+
+
+
+
+
+
