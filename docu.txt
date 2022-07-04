@@ -13,7 +13,6 @@ nosql
 
 containers vs virtual machine
 
-
 VM: an abstraction of a machine (physical hardware)
 	-managed by hyper visor
 	-each VM needs a full-blown OS

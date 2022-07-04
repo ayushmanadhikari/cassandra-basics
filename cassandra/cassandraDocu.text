@@ -63,8 +63,25 @@ First the token is calculated according to the partition key of the data to be s
 
 
 CQL - Keyspaces and Tables
- 
 
+
+
+CQL -Consistenct, Inserts and Selects
+Assume Replication Factor = 3 (standard)
+Consistency levels
+	1. Any 
+		-only available on writes 
+		-esnures value is written to minimum of one replica node before returning to client
+
+	2. One, Two or Three (for RF=3)
+		-Say 2
+		-it will only be a successfull write if the data is written to 2 nodes
+		-for read, it will fetch data from 1,2 or 3 respective of the consistency level 
+	
+	3. Quorum 
+		-ensures write was recieved by majority of replicas
+		-no of nodes queries during Quorum is 
+		(RF+1)/2 i.e for this case, 2 
 
 
 
